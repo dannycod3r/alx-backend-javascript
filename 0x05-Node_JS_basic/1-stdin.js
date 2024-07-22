@@ -10,8 +10,7 @@ if (process.stdin.isTTY) {
 } else {
   // Listen for user input
   process.stdin.on('data', (data) => {
-    const name = data.toString().trim();
-    console.log(`Your name is: ${name}`);
+    process.stdout.write(`Your name is: ${data.toString()}`);
     process.exit();
   });
 
