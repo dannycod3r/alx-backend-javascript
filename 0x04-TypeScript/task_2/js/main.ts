@@ -59,7 +59,16 @@ function executeWork(employee: Director | Teacher): void {
   }
 }
 
+type Subjects = 'Math' | 'History';
 
+// Define the teachClass function
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else {
+    return 'Teaching History';
+  }
+}
 
 // example usage
 const teacher1 = createEmployee(200);
@@ -73,3 +82,6 @@ console.log(director2); // Should print Director
 
 executeWork(teacher1);
 executeWork(director1);
+
+console.log(teachClass('Math'));    // Should print "Teaching Math"
+console.log(teachClass('History')); // Should print "Teaching History"
