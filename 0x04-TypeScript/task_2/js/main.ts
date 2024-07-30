@@ -46,6 +46,20 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
+// type predictae isDirector
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+  } else {
+    console.log((employee as Teacher).workTeacherTasks());
+  }
+}
+
+
 
 // example usage
 const teacher1 = createEmployee(200);
@@ -56,3 +70,6 @@ const director2 = createEmployee('$500');
 console.log(teacher1); // Should print Teacher
 console.log(director1); // Should print Director
 console.log(director2); // Should print Director
+
+executeWork(teacher1);
+executeWork(director1);
