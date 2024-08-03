@@ -52,7 +52,7 @@ const app = http.createServer(async (req, res) => {
       res.end(data);
     } catch (error) {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('Cannot load the database\n');
+      res.end('Cannot load the database');
     }
   } else {
     // Handle other paths
