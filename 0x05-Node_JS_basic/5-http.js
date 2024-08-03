@@ -48,6 +48,7 @@ const app = http.createServer(async (req, res) => {
       const data = await countStudents(DATABASE);
 
       res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.write(Buffer.from('This is the list of our students\n'));
       res.end(data);
     } catch (error) {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
