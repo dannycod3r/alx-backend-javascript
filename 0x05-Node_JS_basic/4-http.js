@@ -11,6 +11,7 @@ app.on('request', (_, res) => {
   res.setHeader('Content-Length', responseText.length);
   res.statusCode = 200;
   res.write(Buffer.from(responseText));
+  res.end(); // Ensure the response is ended
 });
 
 app.listen(PORT, HOST, () => {
