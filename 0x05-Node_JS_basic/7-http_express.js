@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs').promises;
 
-
 const app = express();
 const PORT = 1245;
 const DATABASE = process.argv.length > 2 ? process.argv[2] : '';
@@ -43,7 +42,7 @@ async function countStudents(filePath) {
     Object.keys(fieldCount).forEach((field) => {
       result += `Number of students in ${field}: ${fieldCount[field].length}. List: ${fieldCount[field].join(', ')}\n`;
     });
-      return result.trim();
+    return result.trim();
   } catch (error) {
     throw new Error('Cannot load the database');
   }
