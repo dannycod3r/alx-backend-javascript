@@ -1,0 +1,28 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "unittests in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/dannycod3r/alx-backend-javascript.git"
+  },
+  "keywords": [
+    "test",
+    "tdd",
+    "bdd",
+    "mocha",
+    "unittest"
+  ],
+  "author": "dannycod3r",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "mocha": "^10.7.0"
+  }
+}
