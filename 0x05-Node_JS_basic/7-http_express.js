@@ -1,6 +1,6 @@
 const express = require('express');
 const fs = require('fs').promises;
-// const path = require('path');
+
 
 const app = express();
 const PORT = 1245;
@@ -43,8 +43,7 @@ async function countStudents(filePath) {
     Object.keys(fieldCount).forEach((field) => {
       result += `Number of students in ${field}: ${fieldCount[field].length}. List: ${fieldCount[field].join(', ')}\n`;
     });
-
-    return result;
+      return result.trim();
   } catch (error) {
     throw new Error('Cannot load the database');
   }
@@ -58,8 +57,8 @@ app.get('/', (req, res) => {
 // Route for '/students'
 app.get('/students', async (req, res) => {
   try {
-    const filePath = DATABASE; // Adjust the path as needed
-    const studentsList = await countStudents(filePath);
+    // const filePath = DATABASE; // Adjust the path as needed
+    const studentsList = await countStudents(DATABASE);
     res.send(`This is the list of our students\n${studentsList}`);
   } catch (error) {
     res.status(500).send(error.message);
